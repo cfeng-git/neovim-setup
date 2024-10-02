@@ -1,0 +1,149 @@
+
+snippet preamb "my standard latex preamble" b
+\\documentclass[12pt]{article}
+\\usepackage{geometry}
+\\usepackage{amssymb}
+\\usepackage{amsthm}
+\\usepackage[lite]{amsrefs}
+\\usepackage{hyperref}
+\\usepackage{physics}
+\\usepackage{color}
+\\usepackage{graphicx}
+\\usepackage{enumitem}
+\\setlist{noitemsep}
+\\setlength\\parindent{0pt}
+\\setlength\\parskip{2pt}
+
+\\theoremstyle{plain} %% This is the default, anyway
+\\newtheorem{theorem}{Theorem}[section]
+\\newtheorem{corollary}[theorem]{Corollary}
+\\newtheorem{lemma}[theorem]{Lemma}
+\\newtheorem{proposition}[theorem]{Proposition}
+
+\\theoremstyle{definition}
+\\newtheorem{definition}[theorem]{Definition}
+\\newtheorem{problem}{Problem}
+
+
+\\theoremstyle{remark}
+\\newtheorem{remark}[theorem]{Remark}
+\\newtheorem{example}[theorem]{Example}
+\\newtheorem{notation}[theorem]{Notation}
+\\newtheorem{terminology}[theorem]{Terminology}
+
+\\begin{document}
+\\title{$1}
+\\maketitle
+$0
+\\end{document}
+endsnippet	
+
+snippet beg "begin{} / end{}" bA
+\\begin{$1}
+	$0
+\\end{$1}
+endsnippet
+
+priority 100
+snippet ... "ldots" iA
+\ldots
+endsnippet
+
+snippet table "Table environment" b
+\begin{table}[${1:htpb}]
+	\centering
+	\caption{${2:caption}}
+	\label{tab:${3:label}}
+	\begin{tabular}{${5:c}}
+	$0${5/((?<=.)c|l|r)|./(?1: & )/g}
+	\end{tabular}
+\end{table}
+endsnippet
+
+snippet fig "Figure environment" b
+\begin{figure}[${1:htpb}]
+	\centering
+	${2:\includegraphics[width=0.8\textwidth]{$3}}
+	\caption{${4:$3}}
+	\label{fig:${5:${3/\W+/-/g}}}
+\end{figure}
+endsnippet
+
+snippet sec "section" b 
+\section{$1} 
+$0
+endsnippet
+
+
+snippet thm "theorem" b 
+\begin{theorem}[$1]
+	$2 
+\end{theorem}
+endsnippet 
+
+snippet pf "proof" b 
+\begin{proof}[$1]
+	$2 
+\end{proof}
+endsnippet 
+
+
+snippet def "definition" b 
+\begin{definition}[$1]
+	$2 
+\end{definition}
+endsnippet 
+
+snippet lem "lemma" b 
+\begin{lemma}[$1]
+	$2 
+\end{lemma}
+endsnippet 
+
+snippet prop "proposition" b 
+\begin{proposition}[$1]
+	$2 
+\end{proposition}
+endsnippet 
+
+snippet rmk "remark" b 
+\begin{remark}[$1]
+	$2 
+\end{remark}
+endsnippet 
+
+snippet enum "Enumerate" bA
+\begin{enumerate}
+	\item $0
+\end{enumerate}
+endsnippet
+
+snippet item "Itemize" bA
+\begin{itemize}
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet desc "Description" b
+\begin{description}
+	\item[$1] $0
+\end{description}
+endsnippet
+
+snippet pac "Package" b
+\usepackage[${1:options}]{${2:package}}$0
+endsnippet
+
+
+snippet lb "label" i
+\label{$1} $0 
+endsnippet 
+
+
+snippet ref "reference" i 
+\ref{$1} $0 
+endsnippet 
+
+
+
+
